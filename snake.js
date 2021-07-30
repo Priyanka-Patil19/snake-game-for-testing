@@ -115,4 +115,4 @@ function drow() {
     snake.unshift(newHead);
 }
 
-setInterval(drow, 100);
+setInterval(drow, 500);
