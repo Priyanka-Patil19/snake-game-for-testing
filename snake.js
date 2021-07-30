@@ -1,4 +1,5 @@
 const cvs = document.getElementById("canvas");
+const gameOver=document.getElementById("gameOver");
 const ctx = cvs.getContext("2d");
 const snakeW = 10;
 const snakeH = 10;
@@ -53,6 +54,7 @@ function drowFood(x, y) {
 //drow function
 function drow() {
     ctx.clearRect(0, 0, cvs.width, cvs.height);
+
     for (let i = 0; i < snake.length; i++) {
         let X = snake[i].x;
         let Y = snake[i].y;
@@ -67,7 +69,8 @@ function drow() {
     let snakeY = snake[0].y;
 
     if (snakeX < 0 || snakeY < 0 || snakeX >= cvs.width / snakeW || snakeY >= cvs.height / snakeH) {
-        alert("Game Over");
+        // alert("Game Over");
+        gameOver.style.visibility="visible";
     }
 
     if (dir == "right") {
