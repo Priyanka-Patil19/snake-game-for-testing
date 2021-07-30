@@ -1,5 +1,6 @@
 const cvs = document.getElementById("canvas");
 const gameOver=document.getElementById("gameOver");
+const restart=document.getElementById("restart");
 const ctx = cvs.getContext("2d");
 const snakeW = 10;
 const snakeH = 10;
@@ -71,6 +72,10 @@ function drow() {
     if (snakeX < 0 || snakeY < 0 || snakeX >= cvs.width / snakeW || snakeY >= cvs.height / snakeH) {
         // alert("Game Over");
         gameOver.style.visibility="visible";
+        restart.style.visibility="visible";
+        restart.addEventListener('click',(e)=>{
+            location.reload(true);
+          })
     }
 
     if (dir == "right") {
